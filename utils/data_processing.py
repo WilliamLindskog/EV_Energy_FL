@@ -19,5 +19,10 @@ for col in df.columns:
 with open('./data/cat_codes.json', 'w') as f: 
     json.dump(cat_codes, f)
 
+# put quantity(kWh) as first column
+cols = list(df.columns)
+cols.insert(0, cols.pop(cols.index('quantity(kWh)')))
+df = df[cols]
+
 # Save encoded data
-df.to_csv('./data/fever_encoded.csv', index=False)
+df.to_csv('./data/fever_encoded.csv', index=False, header=False)

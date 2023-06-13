@@ -1,0 +1,30 @@
+{
+    "format_version": 2,
+    "components": [],
+    "executors": [
+        {
+            "tasks": [
+                "train"
+            ],
+            "executor": {
+                "id": "Executor",
+                "path": "fever_executor.FedXGBHistogramFEVERExecutor",
+                "args": {
+                    "data_split_filename": "/home/dnde/Documents/PhD/2023/EV_Energy_FL/NVFlare/examples/advanced/xgboost/tmp/nvflare/fever/5_uniform/data_site-3.json",
+                    "num_rounds": 200,
+                    "early_stopping_round": 100,
+                    "xgboost_params": {
+                        "max_depth": 5,
+                        "eta": 0.05,
+                        "objective": "reg:logistic",
+                        "eval_metric": "mae",
+                        "tree_method": "gpu_hist",
+                        "nthread": 16
+                    }
+                }
+            }
+        }
+    ],
+    "task_result_filters": [],
+    "task_data_filters": []
+}

@@ -1,0 +1,42 @@
+2023-06-13 17:29:47,773 - ClientTaskWorker - INFO - ClientTaskWorker started to run
+2023-06-13 17:29:47,815 - Cell - INFO - site-2.simulate_job: created backbone external connector to tcp://localhost:34457
+2023-06-13 17:29:47,815 - nvflare.fuel.f3.sfm.conn_manager - INFO - Connector [CH00001 ACTIVE tcp://localhost:34457] is starting
+2023-06-13 17:29:48,916 - FedXGBHistogramFEVERExecutor - INFO - [identity=site-2, run=simulate_job]: server address is localhost
+2023-06-13 17:29:48,916 - ClientRunner - INFO - [identity=site-2, run=simulate_job]: client runner started
+2023-06-13 17:29:48,916 - ClientTaskWorker - INFO - Initialize ClientRunner for client: site-2
+2023-06-13 17:29:48,924 - Communicator - INFO - Received from simulator_server server  (554 Bytes). getTask: train time: 0.0059566497802734375 seconds
+2023-06-13 17:29:48,925 - FederatedClient - INFO - pull_task completed. Task name:train Status:True 
+2023-06-13 17:29:48,925 - ClientRunner - INFO - [identity=site-2, run=simulate_job, peer=simulator_server, peer_run=simulate_job]: got task assignment: name=train, id=feb293b4-7fb6-439b-b66a-85b3aa409c06
+2023-06-13 17:29:48,925 - ClientRunner - INFO - [identity=site-2, run=simulate_job, peer=simulator_server, peer_run=simulate_job, task_name=train, task_id=feb293b4-7fb6-439b-b66a-85b3aa409c06]: invoking task executor <class 'fever_executor.FedXGBHistogramFEVERExecutor'>
+2023-06-13 17:29:48,925 - FedXGBHistogramFEVERExecutor - INFO - [identity=site-2, run=simulate_job, peer=simulator_server, peer_run=simulate_job, task_name=train, task_id=feb293b4-7fb6-439b-b66a-85b3aa409c06]: Client trainer got task: train
+2023-06-13 17:29:48,927 - FedXGBHistogramFEVERExecutor - ERROR - [identity=site-2, run=simulate_job, peer=simulator_server, peer_run=simulate_job, task_name=train, task_id=feb293b4-7fb6-439b-b66a-85b3aa409c06]: learner execute exception: [Errno 2] No such file or directory: '/data/fever_encoded.csv'
+2023-06-13 17:29:48,928 - FedXGBHistogramFEVERExecutor - ERROR - Traceback (most recent call last):
+  File "/home/dnde/.cache/pypoetry/virtualenvs/ev-energy-fl-wejCL6LQ-py3.9/lib/python3.9/site-packages/nvflare/app_opt/xgboost/histogram_based/executor.py", line 137, in execute
+    return self.train(shareable, fl_ctx, abort_signal)
+  File "/home/dnde/.cache/pypoetry/virtualenvs/ev-energy-fl-wejCL6LQ-py3.9/lib/python3.9/site-packages/nvflare/app_opt/xgboost/histogram_based/executor.py", line 152, in train
+    self.dmat_train, self.dmat_valid = self.load_data()
+  File "/home/dnde/Documents/PhD/2023/EV_Energy_FL/workspaces/xgboost_workspace_5_histogram_uniform_split_uniform_lr/simulate_job/app_site-2/custom/fever_executor.py", line 74, in load_data
+    X_train, y_train, total_train_data_num = _read_FEVER_with_pandas(
+  File "/home/dnde/Documents/PhD/2023/EV_Energy_FL/workspaces/xgboost_workspace_5_histogram_uniform_split_uniform_lr/simulate_job/app_site-2/custom/fever_executor.py", line 26, in _read_FEVER_with_pandas
+    data = pd.read_csv(data_path, header=None, skiprows=start, nrows=data_size)
+  File "/home/dnde/.cache/pypoetry/virtualenvs/ev-energy-fl-wejCL6LQ-py3.9/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/dnde/.cache/pypoetry/virtualenvs/ev-energy-fl-wejCL6LQ-py3.9/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/dnde/.cache/pypoetry/virtualenvs/ev-energy-fl-wejCL6LQ-py3.9/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/dnde/.cache/pypoetry/virtualenvs/ev-energy-fl-wejCL6LQ-py3.9/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+  File "/home/dnde/.cache/pypoetry/virtualenvs/ev-energy-fl-wejCL6LQ-py3.9/lib/python3.9/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/data/fever_encoded.csv'
+
+2023-06-13 17:29:48,928 - ClientRunner - INFO - [identity=site-2, run=simulate_job, peer=simulator_server, peer_run=simulate_job, task_name=train, task_id=feb293b4-7fb6-439b-b66a-85b3aa409c06]: finished processing task
+2023-06-13 17:29:48,929 - FederatedClient - INFO - Starting to push execute result.
+2023-06-13 17:29:48,932 - Communicator - INFO -  SubmitUpdate size: 489 Bytes. time: 0.002610921859741211 seconds
+2023-06-13 17:29:48,933 - ClientRunner - INFO - [identity=site-2, run=simulate_job, peer=simulator_server, peer_run=simulate_job, task_name=train, task_id=feb293b4-7fb6-439b-b66a-85b3aa409c06]: result sent to server for task: name=train, id=feb293b4-7fb6-439b-b66a-85b3aa409c06
+2023-06-13 17:29:48,933 - ClientTaskWorker - INFO - Finished one task run for client: site-2 interval: 2 task_processed: True
+2023-06-13 17:29:50,938 - FederatedClient - INFO - pull_task completed. Task name:__end_run__ Status:True 
+2023-06-13 17:29:50,938 - ClientRunner - INFO - [identity=site-2, run=simulate_job, peer=simulator_server, peer_run=simulate_job]: server asked to end the run
+2023-06-13 17:29:50,938 - ClientTaskWorker - INFO - End the Simulator run.
+2023-06-13 17:29:50,939 - ClientTaskWorker - INFO - Clean up ClientRunner for : site-2 
