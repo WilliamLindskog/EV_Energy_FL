@@ -1,9 +1,6 @@
 import json
 import pandas as pd
 
-# Get encoder
-# from sklearn.preprocessing import LabelEncoder
-
 df = pd.read_csv('./data/fever.csv')
 
 # Drop fuel_date
