@@ -44,7 +44,7 @@ class FedXGBHistogramFEVERExecutor(FedXGBHistogramExecutor):
         data_path = f'{dir_path}.{data_path}'
         data = pd.read_csv(data_path, header=None, skiprows=start, nrows=data_size)
         data_num = data.shape[0]
-        self.logger.info(f"Data: {data}")
+        # self.logger.info(f"Data: {data}")
 
         # split to feature and label
         x = data.drop([0], axis=1)

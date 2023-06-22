@@ -11,11 +11,11 @@
                 "path": "fever_executor.FedXGBHistogramFEVERExecutor",
                 "args": {
                     "data_split_filename": "/home/dnde/Documents/PhD/2023/EV_Energy_FL/NVFlare/examples/advanced/xgboost/tmp/nvflare/fever/5_uniform/data_site-5.json",
-                    "num_rounds": 200,
-                    "early_stopping_round": 100,
+                    "num_rounds": 5000,
+                    "early_stopping_round": 1000,
                     "xgboost_params": {
-                        "max_depth": 5,
-                        "eta": 0.05,
+                        "max_depth": 4,
+                        "eta": 0.02,
                         "objective": "reg:squarederror",
                         "eval_metric": "mae",
                         "tree_method": "gpu_hist",

@@ -1,60 +1,60 @@
-2023-06-13 17:44:31,395 - SimulatorRunner - INFO - Create the Simulator Server.
-2023-06-13 17:44:31,397 - Cell - INFO - server: creating listener on tcp://0:52821
-2023-06-13 17:44:31,397 - Cell - INFO - server: created backbone external listener for tcp://0:52821
-2023-06-13 17:44:31,397 - ConnectorManager - INFO - 57106: Try start_listener Listener resources: {'secure': False, 'host': 'localhost'}
-2023-06-13 17:44:31,397 - nvflare.fuel.f3.sfm.conn_manager - INFO - Connector [CH00002 PASSIVE tcp://0:21156] is starting
-2023-06-13 17:44:31,898 - Cell - INFO - server: created backbone internal listener for tcp://localhost:21156
-2023-06-13 17:44:31,898 - nvflare.fuel.f3.sfm.conn_manager - INFO - Connector [CH00001 PASSIVE tcp://0:52821] is starting
-2023-06-13 17:44:31,968 - nvflare.fuel.hci.server.hci - INFO - Starting Admin Server localhost on Port 40225
-2023-06-13 17:44:31,968 - SimulatorRunner - INFO - Deploy the Apps.
-2023-06-13 17:44:31,973 - SimulatorRunner - INFO - Create the simulate clients.
-2023-06-13 17:44:31,976 - ClientManager - INFO - Client: New client site-1@192.168.2.188 joined. Sent token: 2ffb0362-cc0f-4cc0-9b51-569a6727bc16.  Total clients: 1
-2023-06-13 17:44:31,976 - FederatedClient - INFO - Successfully registered client:site-1 for project simulator_server. Token:2ffb0362-cc0f-4cc0-9b51-569a6727bc16 SSID:
-2023-06-13 17:44:31,978 - ClientManager - INFO - Client: New client site-2@192.168.2.188 joined. Sent token: 0c933417-9efa-4c4c-885a-efe4b3c86a8a.  Total clients: 2
-2023-06-13 17:44:31,978 - FederatedClient - INFO - Successfully registered client:site-2 for project simulator_server. Token:0c933417-9efa-4c4c-885a-efe4b3c86a8a SSID:
-2023-06-13 17:44:31,979 - SimulatorRunner - INFO - Set the client status ready.
-2023-06-13 17:44:31,979 - SimulatorRunner - INFO - Deploy and start the Server App.
-2023-06-13 17:44:31,979 - ServerCommandAgent - INFO - ServerCommandAgent cell register_request_cb: server.simulate_job
-2023-06-13 17:44:32,626 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job]: Server runner starting ...
-2023-06-13 17:44:32,626 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job]: starting workflow xgb_controller (<class 'nvflare.app_opt.xgboost.histogram_based.controller.XGBFedController'>) ...
-2023-06-13 17:44:32,626 - XGBFedController - INFO - [identity=simulator_server, run=simulate_job]: Initializing XGBFedController workflow.
-2023-06-13 17:44:32,627 - XGBFedController - INFO - [identity=simulator_server, run=simulate_job]: Starting XGBoost FL server on port 55589
-2023-06-13 17:44:32,630 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job]: Workflow xgb_controller (<class 'nvflare.app_opt.xgboost.histogram_based.controller.XGBFedController'>) started
-2023-06-13 17:44:32,630 - XGBFedController - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: Begin XGBoost training phase.
-2023-06-13 17:44:32,631 - XGBFedController - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: scheduled task train
-2023-06-13 17:44:32,980 - SimulatorClientRunner - INFO - Start the clients run simulation.
-2023-06-13 17:44:33,982 - SimulatorClientRunner - INFO - Simulate Run client: site-1
-2023-06-13 17:44:33,982 - SimulatorClientRunner - INFO - Simulate Run client: site-2
-2023-06-13 17:44:36,039 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-2, peer_run=simulate_job, task_name=train, task_id=532ba4a3-828f-4be0-a47f-d0e95837a83e]: assigned task to client site-2: name=train, id=532ba4a3-828f-4be0-a47f-d0e95837a83e
-2023-06-13 17:44:36,039 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-2, peer_run=simulate_job, task_name=train, task_id=532ba4a3-828f-4be0-a47f-d0e95837a83e]: sent task assignment to client. client_name:site-2 task_id:532ba4a3-828f-4be0-a47f-d0e95837a83e
-2023-06-13 17:44:36,040 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-1, peer_run=simulate_job, task_name=train, task_id=0bd583c2-8645-4cb7-95da-8b28e980895b]: assigned task to client site-1: name=train, id=0bd583c2-8645-4cb7-95da-8b28e980895b
-2023-06-13 17:44:36,040 - GetTaskCommand - INFO - return task to client.  client_name: site-2  task_name: train   task_id: 532ba4a3-828f-4be0-a47f-d0e95837a83e  sharable_header_task_id: 532ba4a3-828f-4be0-a47f-d0e95837a83e
-2023-06-13 17:44:36,040 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-1, peer_run=simulate_job, task_name=train, task_id=0bd583c2-8645-4cb7-95da-8b28e980895b]: sent task assignment to client. client_name:site-1 task_id:0bd583c2-8645-4cb7-95da-8b28e980895b
-2023-06-13 17:44:36,041 - GetTaskCommand - INFO - return task to client.  client_name: site-1  task_name: train   task_id: 0bd583c2-8645-4cb7-95da-8b28e980895b  sharable_header_task_id: 0bd583c2-8645-4cb7-95da-8b28e980895b
-2023-06-13 17:44:39,667 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-1, peer_run=simulate_job]: got result from client site-1 for task: name=train, id=0bd583c2-8645-4cb7-95da-8b28e980895b
-2023-06-13 17:44:39,667 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-1, peer_run=simulate_job, peer_rc=OK, task_name=train, task_id=0bd583c2-8645-4cb7-95da-8b28e980895b]: finished processing client result by xgb_controller
-2023-06-13 17:44:39,668 - SubmitUpdateCommand - INFO - submit_update process. client_name:site-1   task_id:0bd583c2-8645-4cb7-95da-8b28e980895b
-2023-06-13 17:44:39,670 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-2, peer_run=simulate_job]: got result from client site-2 for task: name=train, id=532ba4a3-828f-4be0-a47f-d0e95837a83e
-2023-06-13 17:44:39,670 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-2, peer_run=simulate_job, peer_rc=OK, task_name=train, task_id=532ba4a3-828f-4be0-a47f-d0e95837a83e]: finished processing client result by xgb_controller
-2023-06-13 17:44:39,670 - SubmitUpdateCommand - INFO - submit_update process. client_name:site-2   task_id:532ba4a3-828f-4be0-a47f-d0e95837a83e
-2023-06-13 17:44:39,841 - XGBFedController - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: task train exit with status TaskCompletionStatus.OK
-2023-06-13 17:44:40,040 - XGBFedController - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: Finish training phase.
-2023-06-13 17:44:40,040 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: Workflow: xgb_controller finalizing ...
-2023-06-13 17:44:40,042 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: ABOUT_TO_END_RUN fired
-2023-06-13 17:44:40,042 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: END_RUN fired
-2023-06-13 17:44:40,042 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: Server runner finished.
-2023-06-13 17:44:41,632 - SimulatorServer - INFO - Server app stopped.
+2023-06-13 17:46:26,733 - SimulatorRunner - INFO - Create the Simulator Server.
+2023-06-13 17:46:26,734 - Cell - INFO - server: creating listener on tcp://0:40381
+2023-06-13 17:46:26,734 - Cell - INFO - server: created backbone external listener for tcp://0:40381
+2023-06-13 17:46:26,734 - ConnectorManager - INFO - 60237: Try start_listener Listener resources: {'secure': False, 'host': 'localhost'}
+2023-06-13 17:46:26,734 - nvflare.fuel.f3.sfm.conn_manager - INFO - Connector [CH00002 PASSIVE tcp://0:36233] is starting
+2023-06-13 17:46:27,235 - Cell - INFO - server: created backbone internal listener for tcp://localhost:36233
+2023-06-13 17:46:27,236 - nvflare.fuel.f3.sfm.conn_manager - INFO - Connector [CH00001 PASSIVE tcp://0:40381] is starting
+2023-06-13 17:46:27,325 - nvflare.fuel.hci.server.hci - INFO - Starting Admin Server localhost on Port 46545
+2023-06-13 17:46:27,325 - SimulatorRunner - INFO - Deploy the Apps.
+2023-06-13 17:46:27,331 - SimulatorRunner - INFO - Create the simulate clients.
+2023-06-13 17:46:27,334 - ClientManager - INFO - Client: New client site-1@192.168.2.188 joined. Sent token: c34dc19e-32db-4538-8769-02d157a5ec7f.  Total clients: 1
+2023-06-13 17:46:27,334 - FederatedClient - INFO - Successfully registered client:site-1 for project simulator_server. Token:c34dc19e-32db-4538-8769-02d157a5ec7f SSID:
+2023-06-13 17:46:27,336 - ClientManager - INFO - Client: New client site-2@192.168.2.188 joined. Sent token: 59bed05c-0a9f-4e2b-a3e8-4087a59fc135.  Total clients: 2
+2023-06-13 17:46:27,337 - FederatedClient - INFO - Successfully registered client:site-2 for project simulator_server. Token:59bed05c-0a9f-4e2b-a3e8-4087a59fc135 SSID:
+2023-06-13 17:46:27,337 - SimulatorRunner - INFO - Set the client status ready.
+2023-06-13 17:46:27,337 - SimulatorRunner - INFO - Deploy and start the Server App.
+2023-06-13 17:46:27,338 - ServerCommandAgent - INFO - ServerCommandAgent cell register_request_cb: server.simulate_job
+2023-06-13 17:46:28,036 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job]: Server runner starting ...
+2023-06-13 17:46:28,036 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job]: starting workflow xgb_controller (<class 'nvflare.app_opt.xgboost.histogram_based.controller.XGBFedController'>) ...
+2023-06-13 17:46:28,037 - XGBFedController - INFO - [identity=simulator_server, run=simulate_job]: Initializing XGBFedController workflow.
+2023-06-13 17:46:28,037 - XGBFedController - INFO - [identity=simulator_server, run=simulate_job]: Starting XGBoost FL server on port 50313
+2023-06-13 17:46:28,040 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job]: Workflow xgb_controller (<class 'nvflare.app_opt.xgboost.histogram_based.controller.XGBFedController'>) started
+2023-06-13 17:46:28,041 - XGBFedController - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: Begin XGBoost training phase.
+2023-06-13 17:46:28,041 - XGBFedController - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: scheduled task train
+2023-06-13 17:46:28,338 - SimulatorClientRunner - INFO - Start the clients run simulation.
+2023-06-13 17:46:29,340 - SimulatorClientRunner - INFO - Simulate Run client: site-1
+2023-06-13 17:46:29,340 - SimulatorClientRunner - INFO - Simulate Run client: site-2
+2023-06-13 17:46:31,378 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-2, peer_run=simulate_job, task_name=train, task_id=7eb80f7c-8fc9-4cb1-a4da-5cac046fa90c]: assigned task to client site-2: name=train, id=7eb80f7c-8fc9-4cb1-a4da-5cac046fa90c
+2023-06-13 17:46:31,378 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-2, peer_run=simulate_job, task_name=train, task_id=7eb80f7c-8fc9-4cb1-a4da-5cac046fa90c]: sent task assignment to client. client_name:site-2 task_id:7eb80f7c-8fc9-4cb1-a4da-5cac046fa90c
+2023-06-13 17:46:31,379 - GetTaskCommand - INFO - return task to client.  client_name: site-2  task_name: train   task_id: 7eb80f7c-8fc9-4cb1-a4da-5cac046fa90c  sharable_header_task_id: 7eb80f7c-8fc9-4cb1-a4da-5cac046fa90c
+2023-06-13 17:46:31,381 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-1, peer_run=simulate_job, task_name=train, task_id=0a7f7972-43bf-4e35-b7f4-355a356a78e4]: assigned task to client site-1: name=train, id=0a7f7972-43bf-4e35-b7f4-355a356a78e4
+2023-06-13 17:46:31,381 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-1, peer_run=simulate_job, task_name=train, task_id=0a7f7972-43bf-4e35-b7f4-355a356a78e4]: sent task assignment to client. client_name:site-1 task_id:0a7f7972-43bf-4e35-b7f4-355a356a78e4
+2023-06-13 17:46:31,381 - GetTaskCommand - INFO - return task to client.  client_name: site-1  task_name: train   task_id: 0a7f7972-43bf-4e35-b7f4-355a356a78e4  sharable_header_task_id: 0a7f7972-43bf-4e35-b7f4-355a356a78e4
+2023-06-13 17:47:32,198 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-2, peer_run=simulate_job]: got result from client site-2 for task: name=train, id=7eb80f7c-8fc9-4cb1-a4da-5cac046fa90c
+2023-06-13 17:47:32,198 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-2, peer_run=simulate_job, peer_rc=OK, task_name=train, task_id=7eb80f7c-8fc9-4cb1-a4da-5cac046fa90c]: finished processing client result by xgb_controller
+2023-06-13 17:47:32,198 - SubmitUpdateCommand - INFO - submit_update process. client_name:site-2   task_id:7eb80f7c-8fc9-4cb1-a4da-5cac046fa90c
+2023-06-13 17:47:32,214 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-1, peer_run=simulate_job]: got result from client site-1 for task: name=train, id=0a7f7972-43bf-4e35-b7f4-355a356a78e4
+2023-06-13 17:47:32,215 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-1, peer_run=simulate_job, peer_rc=OK, task_name=train, task_id=0a7f7972-43bf-4e35-b7f4-355a356a78e4]: finished processing client result by xgb_controller
+2023-06-13 17:47:32,215 - SubmitUpdateCommand - INFO - submit_update process. client_name:site-1   task_id:0a7f7972-43bf-4e35-b7f4-355a356a78e4
+2023-06-13 17:47:32,328 - XGBFedController - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: task train exit with status TaskCompletionStatus.OK
+2023-06-13 17:47:32,512 - XGBFedController - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: Finish training phase.
+2023-06-13 17:47:32,512 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: Workflow: xgb_controller finalizing ...
+2023-06-13 17:47:32,529 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: ABOUT_TO_END_RUN fired
+2023-06-13 17:47:32,529 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: END_RUN fired
+2023-06-13 17:47:32,529 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: Server runner finished.
+2023-06-13 17:47:34,082 - SimulatorServer - INFO - Server app stopped.
 
 
-2023-06-13 17:44:41,673 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-1, peer_run=simulate_job]: server runner is finalizing - asked client to end the run
-2023-06-13 17:44:41,673 - GetTaskCommand - INFO - return task to client.  client_name: site-1  task_name: __end_run__   task_id:   sharable_header_task_id: 
-2023-06-13 17:44:41,676 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-2, peer_run=simulate_job]: server runner is finalizing - asked client to end the run
-2023-06-13 17:44:41,676 - GetTaskCommand - INFO - return task to client.  client_name: site-2  task_name: __end_run__   task_id:   sharable_header_task_id: 
-2023-06-13 17:44:41,678 - FederatedClient - INFO - Shutting down client run: site-1
-2023-06-13 17:44:41,678 - FederatedClient - INFO - Shutting down client run: site-2
-2023-06-13 17:44:41,678 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: asked to abort - triggered abort_signal to stop the RUN
-2023-06-13 17:44:41,979 - nvflare.fuel.hci.server.hci - INFO - Admin Server localhost on Port 40225 shutdown!
-2023-06-13 17:44:41,980 - SimulatorServer - INFO - shutting down server
-2023-06-13 17:44:41,980 - SimulatorServer - INFO - canceling sync locks
-2023-06-13 17:44:41,980 - SimulatorServer - INFO - server off
-2023-06-13 17:44:45,413 - MPM - INFO - MPM: Good Bye!
+2023-06-13 17:47:34,204 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-2, peer_run=simulate_job]: server runner is finalizing - asked client to end the run
+2023-06-13 17:47:34,204 - GetTaskCommand - INFO - return task to client.  client_name: site-2  task_name: __end_run__   task_id:   sharable_header_task_id: 
+2023-06-13 17:47:34,220 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller, peer=site-1, peer_run=simulate_job]: server runner is finalizing - asked client to end the run
+2023-06-13 17:47:34,221 - GetTaskCommand - INFO - return task to client.  client_name: site-1  task_name: __end_run__   task_id:   sharable_header_task_id: 
+2023-06-13 17:47:34,222 - FederatedClient - INFO - Shutting down client run: site-1
+2023-06-13 17:47:34,223 - FederatedClient - INFO - Shutting down client run: site-2
+2023-06-13 17:47:34,223 - ServerRunner - INFO - [identity=simulator_server, run=simulate_job, wf=xgb_controller]: asked to abort - triggered abort_signal to stop the RUN
+2023-06-13 17:47:34,392 - nvflare.fuel.hci.server.hci - INFO - Admin Server localhost on Port 46545 shutdown!
+2023-06-13 17:47:34,393 - SimulatorServer - INFO - shutting down server
+2023-06-13 17:47:34,393 - SimulatorServer - INFO - canceling sync locks
+2023-06-13 17:47:34,393 - SimulatorServer - INFO - server off
+2023-06-13 17:47:37,806 - MPM - INFO - MPM: Good Bye!
